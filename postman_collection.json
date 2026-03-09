@@ -1,0 +1,91 @@
+{
+  "info": {
+    "name": "API Gerenciamento de Pedidos",
+    "description": "Collection de testes para a API de gerenciamento de pedidos (CRUD).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Criar Pedido (POST)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroPedido\": \"v10089015vdb-01\",\n  \"valorTotal\": 10000,\n  \"dataCriacao\": \"2023-07-19T12:24:11.529Z\",\n  \"items\": [\n    {\n      \"idItem\": \"2434\",\n      \"quantidadeItem\": 1,\n      \"valorItem\": 1000\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/order",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["order"]
+        }
+      }
+    },
+    {
+      "name": "2. Listar Todos os Pedidos (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/order/list",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["order", "list"]
+        }
+      }
+    },
+    {
+      "name": "3. Buscar Pedido por ID (GET)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/order/v10089015vdb-01",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["order", "v10089015vdb-01"]
+        }
+      }
+    },
+    {
+      "name": "4. Atualizar Pedido (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"numeroPedido\": \"v10089015vdb-01\",\n  \"valorTotal\": 15000,\n  \"dataCriacao\": \"2023-07-19T12:24:11.529Z\",\n  \"items\": [\n    {\n      \"idItem\": \"2434\",\n      \"quantidadeItem\": 2,\n      \"valorItem\": 7500\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/order/v10089015vdb-01",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["order", "v10089015vdb-01"]
+        }
+      }
+    },
+    {
+      "name": "5. Deletar Pedido (DELETE)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/order/v10089015vdb-01",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["order", "v10089015vdb-01"]
+        }
+      }
+    }
+  ]
+}
